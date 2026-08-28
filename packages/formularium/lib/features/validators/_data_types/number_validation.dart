@@ -1,4 +1,3 @@
-﻿import 'package:concierge/context_interface.dart';
 import 'package:formularium/features/localization/localizable_interface.dart';
 import 'package:formularium/features/validators/_interfaces/formularium_localizations.dart';
 
@@ -29,7 +28,7 @@ class NumberTooBig implements NumberValidation {
   final num maxValue;
 
   @override
-  String localize(IContext context) => context.fL10n.number_field_value_too_big(maxValue.toString());
+  String localize() => fL10n.number_field_value_too_big(maxValue.toString());
 }
 
 /// O número está abaixo do mínimo permitido.
@@ -41,7 +40,7 @@ class NumberTooSmall implements NumberValidation {
   final num minValue;
 
   @override
-  String localize(IContext context) => context.fL10n.number_field_value_too_small(minValue.toString());
+  String localize() => fL10n.number_field_value_too_small(minValue.toString());
 }
 
 /// O valor não é um número válido.
@@ -53,7 +52,7 @@ class NotANumber implements NumberValidation {
   final String value;
 
   @override
-  String localize(IContext context) => context.fL10n.validation_not_a_number;
+  String localize() => fL10n.validation_not_a_number;
 }
 
 /// O número não é divisível pelo divisor esperado.
@@ -65,7 +64,7 @@ class NotDivisible implements NumberValidation {
   final num divisor;
 
   @override
-  String localize(IContext context) => context.fL10n.number_field_not_divisible(divisor.toString());
+  String localize() => fL10n.number_field_not_divisible(divisor.toString());
 }
 
 /// O número não é positivo (<= 0).
@@ -74,7 +73,7 @@ class NotPositive implements NumberValidation {
   const NotPositive();
 
   @override
-  String localize(IContext context) => context.fL10n.number_field_not_positive;
+  String localize() => fL10n.number_field_not_positive;
 }
 
 /// O número não é negativo (>= 0).
@@ -83,5 +82,5 @@ class NotNegative implements NumberValidation {
   const NotNegative();
 
   @override
-  String localize(IContext context) => context.fL10n.number_field_not_negative;
+  String localize() => fL10n.number_field_not_negative;
 }

@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:concierge/context_interface.dart';
 import 'package:flutter/material.dart' hide FormFieldState;
 import 'package:formularium/features/forms/_data_types/form_field_status.dart';
 import 'package:formularium/features/forms/_extensions/form_field_validators_extension.dart';
@@ -16,13 +15,13 @@ import 'package:formularium_example/widgets.dart';
 class UsernameTaken implements ILocalizable {
   const UsernameTaken();
   @override
-  String localize(IContext context) => 'Nome de usuário já está em uso';
+  String localize() => 'Nome de usuário já está em uso';
 }
 
 class EmailTaken implements ILocalizable {
   const EmailTaken();
   @override
-  String localize(IContext context) => 'Email já está cadastrado';
+  String localize() => 'Email já está cadastrado';
 }
 
 class AsyncValidationExample extends StatefulWidget {

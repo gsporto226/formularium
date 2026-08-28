@@ -1,4 +1,3 @@
-import 'package:concierge/context_interface.dart';
 import 'package:formularium/features/localization/localizable_interface.dart';
 import 'package:formularium/features/validators/_interfaces/formularium_localizations.dart';
 
@@ -20,5 +19,5 @@ class NotABoolean extends BooleanValidation {
   final String value;
 
   @override
-  String localize(IContext context) => context.fL10n.validation_not_a_boolean(value);
+  String localize() => fL10n.validation_not_a_boolean(value);
 }

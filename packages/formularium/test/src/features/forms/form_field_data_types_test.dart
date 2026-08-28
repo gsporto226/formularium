@@ -2,11 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:formularium/features/forms/_data_types/form_field_status.dart';
 import 'package:formularium/features/forms/_data_types/form_field_validation.dart';
 import 'package:formularium/features/forms/_implementations/form_field_validator.dart';
-import '../../helpers/mocks.dart';
 import '../../helpers/test_utils.dart';
 
 void main() {
-  final context = MockContext();
 
   group('FormFieldStatus', () {
     group('Valid', () {
@@ -141,7 +139,7 @@ void main() {
         );
         final mapped = status.map(
           valid: (v) => 'valid: ${v.transformed}',
-          invalid: (i) => 'invalid: ${i.validation.validation.localize(context)}',
+          invalid: (i) => 'invalid: ${i.validation.validation.localize()}',
           pending: (p) => 'pending',
           validating: (v) => 'validating',
         );
@@ -155,7 +153,7 @@ void main() {
         );
         final mapped = status.map(
           valid: (v) => 'valid: ${v.transformed}',
-          invalid: (i) => 'invalid: ${i.validation.validation.localize(context)}',
+          invalid: (i) => 'invalid: ${i.validation.validation.localize()}',
           pending: (p) => 'pending',
           validating: (v) => 'validating',
         );

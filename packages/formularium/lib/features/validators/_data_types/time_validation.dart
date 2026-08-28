@@ -1,4 +1,3 @@
-import 'package:concierge/context_interface.dart';
 import 'package:formularium/features/localization/localizable_interface.dart';
 import 'package:formularium/features/validators/_interfaces/formularium_localizations.dart';
 
@@ -34,5 +33,5 @@ class InvalidTime extends TimeValidation {
   final String mode;
 
   @override
-  String localize(IContext context) => context.fL10n.validation_invalid_time(value, hourFormat, mode);
+  String localize() => fL10n.validation_invalid_time(value, hourFormat, mode);
 }

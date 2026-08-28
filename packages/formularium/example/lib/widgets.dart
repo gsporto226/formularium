@@ -1,9 +1,7 @@
-import 'package:concierge/context_interface.dart';
 import 'package:flutter/material.dart' hide FormFieldState;
 import 'package:formularium/features/forms/_data_types/form_field_status.dart';
 import 'package:formularium/features/forms/_interfaces/form_field_interface.dart';
 import 'package:formularium/features/validators/_data_types/string_validation.dart';
-import 'localizations.dart';
 
 
 class FormFieldTile<T, Transformed> extends StatefulWidget {
@@ -65,8 +63,7 @@ class _FormFieldTileState<T, Transformed> extends State<FormFieldTile<T, Transfo
     final field = widget.field;
     final enabled = field.enabled;
     final status = field.status;
-    final appContext = const AppContext();
-    final errorText = _extractError(status, appContext);
+    final errorText = _extractError(status);
     final errorWidget = widget.errorBuilder?.call(status);
 
     return Column(
@@ -100,9 +97,9 @@ class _FormFieldTileState<T, Transformed> extends State<FormFieldTile<T, Transfo
     );
   }
 
-String? _extractError(FormFieldStatus<Transformed> status, IContext context) => switch (status) {
-  Invalid(:final validation) => validation.validation.localize(context),
-  Valid(:final validation) when validation != null => validation.validation.localize(context),
+String? _extractError(FormFieldStatus<Transformed> status) => switch (status) {
+  Invalid(:final validation) => validation.validation.localize(),
+  Valid(:final validation) when validation != null => validation.validation.localize(),
   _ => null,
 };
 }

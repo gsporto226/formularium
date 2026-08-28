@@ -1,4 +1,3 @@
-import 'package:concierge/context_interface.dart';
 import 'package:formularium/features/localization/localizable_interface.dart';
 import 'package:formularium/features/validators/_interfaces/formularium_localizations.dart';
 
@@ -8,5 +7,5 @@ final class RequiredValidation implements ILocalizable {
   const RequiredValidation();
 
   @override
-  String localize(IContext context) => context.fL10n.required_field_label;
+  String localize() => fL10n.required_field_label;
 }

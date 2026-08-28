@@ -3,4 +3,4 @@ library;
 
 export 'package:formularium/features/localization/localizable_interface.dart';
 export 'package:formularium/features/validators/_interfaces/formularium_localizations.dart';
-export 'package:formularium/l10n/generated/app_localizations.dart';
+export 'package:formularium/features/validators/_interfaces/formularium_localizations_delegate.dart';

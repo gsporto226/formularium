@@ -1,4 +1,3 @@
-import 'package:concierge/context_interface.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:formularium/features/forms/_interfaces/form_entity_interface.dart';
 import 'package:formularium/features/localization/localizable_interface.dart';
@@ -9,7 +8,7 @@ enum TestValidation implements ILocalizable {
   other;
 
   @override
-  String localize(IContext context) => name;
+  String localize() => name;
 }
 
 /// Shared test: verifies the enabled getter/setter on any IFormEntity.
