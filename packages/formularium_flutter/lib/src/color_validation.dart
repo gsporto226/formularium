@@ -1,6 +1,5 @@
-import 'package:concierge/context_interface.dart';
 import 'package:formularium_flutter/src/color_localizations.dart';
-import 'package:formularium/features/localization/localizable_interface.dart';
+import 'package:formularium_localization/formularium_localization.dart';
 
 /// Classe base selada para resultados de validação de cor.
 ///
@@ -21,5 +20,5 @@ class InvalidColor extends ColorValidation {
   final String value;
 
   @override
-  String localize(IContext context) => context.ffL10n.validation_invalid_color(value);
+  String localize() => ffL10n.validation_invalid_color(value);
 }

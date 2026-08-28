@@ -1,0 +1,11 @@
+{
+  "@@last_modified": "2026-08-28T08:11:38.240586",
+  "validation_invalid_color": "\"{value}\" não é uma cor válida",
+  "@validation_invalid_color": {
+    "description": "Cor inválida",
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  }
+}
