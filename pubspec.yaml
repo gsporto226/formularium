@@ -10,8 +10,6 @@ workspace:
   - packages/formularium_decimal
   - packages/formularium_flutter
   - packages/formularium_localization
-  - packages/concierge
-  - packages/localization_interface
   - packages/formularium/example
 
 dependency_overrides:

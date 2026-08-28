@@ -9,14 +9,10 @@ environment:
 resolution: workspace
 
 dependencies:
-  concierge: ^0.0.2
   flutter:
-    sdk: flutter
-  flutter_localizations:
     sdk: flutter
   formularium: ^0.0.2
   formularium_localization: ^0.0.1
-  localization_interface: ^0.0.1+1
 
 dev_dependencies:
   flutter_test:
