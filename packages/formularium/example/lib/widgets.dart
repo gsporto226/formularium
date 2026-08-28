@@ -3,8 +3,8 @@ import 'package:flutter/material.dart' hide FormFieldState;
 import 'package:formularium/features/forms/_data_types/form_field_status.dart';
 import 'package:formularium/features/forms/_interfaces/form_field_interface.dart';
 import 'package:formularium/features/validators/_data_types/string_validation.dart';
-import 'package:formularium/l10n/generated/app_localizations.dart';
 import 'localizations.dart';
+
 
 class FormFieldTile<T, Transformed> extends StatefulWidget {
   const FormFieldTile({
@@ -65,7 +65,7 @@ class _FormFieldTileState<T, Transformed> extends State<FormFieldTile<T, Transfo
     final field = widget.field;
     final enabled = field.enabled;
     final status = field.status;
-    final appContext = AppContext(AppLocalizations.of(context));
+    final appContext = const AppContext();
     final errorText = _extractError(status, appContext);
     final errorWidget = widget.errorBuilder?.call(status);
 

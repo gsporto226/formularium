@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'package:formularium/features/validators/_interfaces/formularium_localizations_delegate.dart';
 import 'package:formularium/formularium.dart';
 import 'package:formularium_example/examples/01_basic_form.dart';
 import 'package:formularium_example/examples/02_login_form.dart';
@@ -35,7 +36,7 @@ class FormulariumExampleApp extends StatelessWidget {
     ),
     home: const ExampleMenu(),
     localizationsDelegates: [
-      FormulariumLocalizations.delegate,
+      FormulariumLocalizationsDelegate(),
       GlobalMaterialLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate,
       GlobalCupertinoLocalizations.delegate,

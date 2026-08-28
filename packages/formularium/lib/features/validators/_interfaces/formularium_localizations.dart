@@ -1,6 +1,8 @@
-import 'package:concierge/context_interface.dart';
-import 'package:flutter/widgets.dart';
-import 'package:formularium/l10n/generated/app_localizations.dart';
+import 'package:formularium/l10n/intl_messages.dart' as msgs;
+import 'package:formularium/l10n/messages_all.dart' show initializeMessages;
+import 'package:formularium_localization/formularium_localization.dart';
+import 'package:intl/date_symbol_data_local.dart' show initializeDateFormatting;
+import 'package:intl/intl.dart';
 
 /// Interface para mensagens localizadas de validação de formulário.
 ///
@@ -249,256 +251,242 @@ abstract interface class IFormulariumLocalizations {
   String get localeName;
 }
 
-/// Exposição das localizações do formulário a partir de um [IContext].
-///
-/// Permite que validações em Dart puro acessem as mensagens via
-/// `context.fL10n.<mensagem>` sem depender de BuildContext.
-extension FormulariumL10n on IContext {
-  /// Recupera o [IFormulariumLocalizations] registrado neste [IContext].
-  IFormulariumLocalizations get fL10n => get<IFormulariumLocalizations>();
-}
-
-/// Ponte padrão que expõe o [AppLocalizations] gerado por gen-l10n
-/// sob o contrato [IFormulariumLocalizations].
-///
-/// Permite manter a possibilidade de o consumidor fornecer suas próprias
-/// localizações (implementando [IFormulariumLocalizations]) ao mesmo tempo que
-/// oferece uma implementação default baseada nos ARBs do pacote.
-class FormulariumLocalizations implements IFormulariumLocalizations {
-  /// Cria uma ponte sobre a instância gerada [app].
-  const FormulariumLocalizations(this._app);
-
-  final AppLocalizations _app;
-
-  /// Delegate padrão para uso em `MaterialApp.localizationsDelegates`.
-  static const LocalizationsDelegate<FormulariumLocalizations> delegate =
-      _FormulariumLocalizationsDelegate();
-
-  /// Obtém as localizações do [context] embrulhadas na ponte.
-  static FormulariumLocalizations of(BuildContext context) =>
-      FormulariumLocalizations(AppLocalizations.of(context));
+/// Implementação pura em Dart sobre as mensagens geradas pelo intl_translation.
+class FormulariumMessages implements IFormulariumLocalizations {
+  const FormulariumMessages();
 
   @override
-  String date_time_field_before(String date) => _app.date_time_field_before(date);
+  String date_time_field_before(String date) => msgs.date_time_field_before(date);
 
   @override
-  String date_time_field_after(String date) => _app.date_time_field_after(date);
+  String date_time_field_after(String date) => msgs.date_time_field_after(date);
 
   @override
   String date_time_field_before_inclusive(String date) =>
-      _app.date_time_field_before_inclusive(date);
+      msgs.date_time_field_before_inclusive(date);
 
   @override
   String date_time_field_after_inclusive(String date) =>
-      _app.date_time_field_after_inclusive(date);
+      msgs.date_time_field_after_inclusive(date);
 
   @override
   String number_field_value_too_big(String number) =>
-      _app.number_field_value_too_big(number);
+      msgs.number_field_value_too_big(number);
 
   @override
   String number_field_value_too_small(String number) =>
-      _app.number_field_value_too_small(number);
+      msgs.number_field_value_too_small(number);
 
   @override
-  String get validation_not_a_number => _app.validation_not_a_number;
+  String get validation_not_a_number => msgs.validation_not_a_number;
 
   @override
   String validation_not_a_boolean(String value) =>
-      _app.validation_not_a_boolean(value);
+      msgs.validation_not_a_boolean(value);
 
   @override
-  String validation_invalid_port(String value) => _app.validation_invalid_port(value);
+  String validation_invalid_port(String value) =>
+      msgs.validation_invalid_port(value);
 
   @override
-  String validation_invalid_url(String value) => _app.validation_invalid_url(value);
+  String validation_invalid_url(String value) =>
+      msgs.validation_invalid_url(value);
 
   @override
   String validation_invalid_lat_long(String value) =>
-      _app.validation_invalid_lat_long(value);
+      msgs.validation_invalid_lat_long(value);
 
   @override
-  String validation_invalid_email(String value) => _app.validation_invalid_email(value);
+  String validation_invalid_email(String value) =>
+      msgs.validation_invalid_email(value);
 
   @override
   String validation_invalid_uuid(String? version) =>
-      _app.validation_invalid_uuid(version ?? '');
+      msgs.validation_invalid_uuid(version ?? '');
 
   @override
   String validation_invalid_semver(String value) =>
-      _app.validation_invalid_semver(value);
+      msgs.validation_invalid_semver(value);
 
   @override
-  String validation_invalid_jwt(String value) => _app.validation_invalid_jwt(value);
+  String validation_invalid_jwt(String value) =>
+      msgs.validation_invalid_jwt(value);
 
   @override
-  String validation_invalid_slug(String value) => _app.validation_invalid_slug(value);
+  String validation_invalid_slug(String value) =>
+      msgs.validation_invalid_slug(value);
 
   @override
-  String validation_not_base64(String value) => _app.validation_not_base64(value);
+  String validation_not_base64(String value) =>
+      msgs.validation_not_base64(value);
 
   @override
   String validation_invalid_mime_type(String value) =>
-      _app.validation_invalid_mime_type(value);
+      msgs.validation_invalid_mime_type(value);
 
   @override
   String validation_invalid_locale(String value) =>
-      _app.validation_invalid_locale(value);
+      msgs.validation_invalid_locale(value);
 
   @override
   String validation_invalid_credit_card(String? provider) =>
-      _app.validation_invalid_credit_card(provider ?? '');
+      msgs.validation_invalid_credit_card(provider ?? '');
 
   @override
   String validation_weak_password(int score, int minScore) =>
-      _app.validation_weak_password(score, minScore);
+      msgs.validation_weak_password(score, minScore);
 
   @override
   String validation_invalid_mongo_id(String value) =>
-      _app.validation_invalid_mongo_id(value);
+      msgs.validation_invalid_mongo_id(value);
 
   @override
   String validation_invalid_hash(String algorithm) =>
-      _app.validation_invalid_hash(algorithm);
+      msgs.validation_invalid_hash(algorithm);
 
   @override
-  String validation_invalid_imei(String value) => _app.validation_invalid_imei(value);
+  String validation_invalid_imei(String value) =>
+      msgs.validation_invalid_imei(value);
 
   @override
   String validation_invalid_phone(String value) =>
-      _app.validation_invalid_phone(value);
+      msgs.validation_invalid_phone(value);
 
   @override
-  String validation_invalid_json(String value) => _app.validation_invalid_json(value);
+  String validation_invalid_json(String value) =>
+      msgs.validation_invalid_json(value);
 
   @override
   String validation_invalid_mac_address(String value) =>
-      _app.validation_invalid_mac_address(value);
+      msgs.validation_invalid_mac_address(value);
 
   @override
-  String get validation_not_octal => _app.validation_not_octal;
+  String get validation_not_octal => msgs.validation_not_octal;
 
   @override
   String validation_byte_length_exceeded(int? min, int? max) =>
-      _app.validation_byte_length_exceeded(min ?? 0, max ?? 0);
+      msgs.validation_byte_length_exceeded(min ?? 0, max ?? 0);
 
   @override
-  String get validation_not_multibyte => _app.validation_not_multibyte;
+  String get validation_not_multibyte => msgs.validation_not_multibyte;
 
   @override
-  String get validation_not_full_width => _app.validation_not_full_width;
+  String get validation_not_full_width => msgs.validation_not_full_width;
 
   @override
-  String get validation_not_half_width => _app.validation_not_half_width;
+  String get validation_not_half_width => msgs.validation_not_half_width;
 
   @override
-  String get validation_not_variable_width => _app.validation_not_variable_width;
+  String get validation_not_variable_width => msgs.validation_not_variable_width;
 
   @override
-  String get validation_not_surrogate_pair => _app.validation_not_surrogate_pair;
+  String get validation_not_surrogate_pair => msgs.validation_not_surrogate_pair;
 
   @override
-  String validation_invalid_ip(String value) => _app.validation_invalid_ip(value);
+  String validation_invalid_ip(String value) =>
+      msgs.validation_invalid_ip(value);
 
   @override
   String validation_invalid_postal_code(String value) =>
-      _app.validation_invalid_postal_code(value);
+      msgs.validation_invalid_postal_code(value);
 
   @override
-  String validation_invalid_isbn(String value) => _app.validation_invalid_isbn(value);
+  String validation_invalid_isbn(String value) =>
+      msgs.validation_invalid_isbn(value);
 
   @override
-  String validation_invalid_ean(String value) => _app.validation_invalid_ean(value);
+  String validation_invalid_ean(String value) =>
+      msgs.validation_invalid_ean(value);
 
   @override
   String validation_invalid_base32(String value) =>
-      _app.validation_invalid_base32(value);
+      msgs.validation_invalid_base32(value);
 
   @override
   String validation_invalid_base58(String value) =>
-      _app.validation_invalid_base58(value);
+      msgs.validation_invalid_base58(value);
 
   @override
-  String get validation_not_alphanumeric => _app.validation_not_alphanumeric;
+  String get validation_not_alphanumeric => msgs.validation_not_alphanumeric;
 
   @override
-  String get validation_not_alpha => _app.validation_not_alpha;
+  String get validation_not_alpha => msgs.validation_not_alpha;
 
   @override
-  String get validation_not_ascii => _app.validation_not_ascii;
+  String get validation_not_ascii => msgs.validation_not_ascii;
 
   @override
   String validation_not_numeric(bool noSymbols) =>
-      _app.validation_not_numeric(noSymbols);
+      msgs.validation_not_numeric(noSymbols);
 
   @override
-  String get validation_not_hexadecimal => _app.validation_not_hexadecimal;
+  String get validation_not_hexadecimal => msgs.validation_not_hexadecimal;
 
   @override
-  String get validation_not_lowercase => _app.validation_not_lowercase;
+  String get validation_not_lowercase => msgs.validation_not_lowercase;
 
   @override
-  String get validation_not_uppercase => _app.validation_not_uppercase;
+  String get validation_not_uppercase => msgs.validation_not_uppercase;
 
   @override
   String validation_string_length_exceeded(int? min, int? max) =>
-      _app.validation_string_length_exceeded(min ?? 0, max ?? 0);
+      msgs.validation_string_length_exceeded(min ?? 0, max ?? 0);
 
   @override
   String validation_string_length_mismatch(List<int> discrete) =>
-      _app.validation_string_length_mismatch(discrete);
+      msgs.validation_string_length_mismatch(discrete);
 
   @override
   String validation_pattern_mismatch(String pattern) =>
-      _app.validation_pattern_mismatch(pattern);
+      msgs.validation_pattern_mismatch(pattern);
 
   @override
-  String get validation_not_in_list => _app.validation_not_in_list;
+  String get validation_not_in_list => msgs.validation_not_in_list;
 
   @override
-  String validation_must_contain(String seed) => _app.validation_must_contain(seed);
+  String validation_must_contain(String seed) =>
+      msgs.validation_must_contain(seed);
 
   @override
   String validation_must_equal(String comparison) =>
-      _app.validation_must_equal(comparison);
+      msgs.validation_must_equal(comparison);
 
   @override
   String validation_invalid_time(String value, String hourFormat, String mode) =>
-      _app.validation_invalid_time(value, hourFormat, mode);
+      msgs.validation_invalid_time(value, hourFormat, mode);
 
   @override
   String number_field_not_divisible(String divisor) =>
-      _app.number_field_not_divisible(divisor);
+      msgs.number_field_not_divisible(divisor);
 
   @override
-  String get number_field_not_positive => _app.number_field_not_positive;
+  String get number_field_not_positive => msgs.number_field_not_positive;
 
   @override
-  String get number_field_not_negative => _app.number_field_not_negative;
+  String get number_field_not_negative => msgs.number_field_not_negative;
 
   @override
-  String get date_invalid => _app.date_invalid;
+  String get date_invalid => msgs.date_invalid;
 
   @override
-  String get required_field_label => _app.required_field_label;
+  String get required_field_label => msgs.required_field_label;
 
   @override
-  String get localeName => _app.localeName;
+  String get localeName => Intl.getCurrentLocale();
 }
 
-/// Delegate que carrega um [FormulariumLocalizations] embrulhando o
-/// [AppLocalizations] gerado.
-class _FormulariumLocalizationsDelegate
-    extends LocalizationsDelegate<FormulariumLocalizations> {
-  const _FormulariumLocalizationsDelegate();
+final CurrentL10n<IFormulariumLocalizations> _current =
+    CurrentL10n(FormulariumMessages.new);
 
-  @override
-  Future<FormulariumLocalizations> load(Locale locale) async =>
-      FormulariumLocalizations(await AppLocalizations.delegate.load(locale));
+/// Mensagens do formularium no locale corrente (`Intl.defaultLocale`).
+IFormulariumLocalizations get fL10n => _current.value;
+set fL10n(IFormulariumLocalizations v) => _current.value = v;
+void resetF10n() => _current.reset();
 
-  @override
-  bool isSupported(Locale locale) => AppLocalizations.delegate.isSupported(locale);
-
-  @override
-  bool shouldReload(_FormulariumLocalizationsDelegate old) => false;
+/// Inicializa intl (mensagens + símbolos de data) para uso sem Flutter.
+Future<void> initFormulariumL10n([String? locale]) async {
+  final loc = locale ?? Intl.defaultLocale ?? 'en';
+  Intl.defaultLocale = loc;
+  await initializeMessages(loc);
+  await initializeDateFormatting(loc);
 }
