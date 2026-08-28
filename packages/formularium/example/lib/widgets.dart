@@ -3,7 +3,6 @@ import 'package:formularium/features/forms/_data_types/form_field_status.dart';
 import 'package:formularium/features/forms/_interfaces/form_field_interface.dart';
 import 'package:formularium/features/validators/_data_types/string_validation.dart';
 
-
 class FormFieldTile<T, Transformed> extends StatefulWidget {
   const FormFieldTile({
     super.key,

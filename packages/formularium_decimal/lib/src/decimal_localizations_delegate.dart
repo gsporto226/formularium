@@ -21,5 +21,5 @@ class FormulariumDecimalLocalizationsDelegate
       const <String>['en', 'pt'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(FormulariumDecimalLocalizationsDelegate old) => false;
+  bool shouldReload(covariant FormulariumDecimalLocalizationsDelegate old) => false;
 }

@@ -35,7 +35,7 @@ class FormulariumExampleApp extends StatelessWidget {
       ),
     ),
     home: const ExampleMenu(),
-    localizationsDelegates: [
+    localizationsDelegates: const [
       FormulariumLocalizationsDelegate(),
       GlobalMaterialLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate,

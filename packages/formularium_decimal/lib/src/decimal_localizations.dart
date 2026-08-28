@@ -3,7 +3,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 
 import '../l10n/intl_messages.dart' as msgs;
-import '../l10n/messages_all.dart' as msgs_init;
+import '../l10n/messages_all.dart' show initializeMessages;
 
 /// Interface de localização para mensagens de validação de campos decimais.
 abstract interface class IFormulariumDecimalLocalizations {
@@ -19,7 +19,7 @@ abstract interface class IFormulariumDecimalLocalizations {
   String get localeName;
 }
 
-/// Implementação nativa (intl) de [IFormulariumDecimalLocalizations].
+/// Implementação pura em Dart sobre as mensagens geradas pelo intl_translation.
 class FormulariumDecimalMessages implements IFormulariumDecimalLocalizations {
   /// Cria as localizações decimais.
   const FormulariumDecimalMessages();
@@ -36,24 +36,22 @@ class FormulariumDecimalMessages implements IFormulariumDecimalLocalizations {
   String get localeName => Intl.getCurrentLocale();
 }
 
-final CurrentL10n<IFormulariumDecimalLocalizations> _fdL10nHolder =
-    CurrentL10n<IFormulariumDecimalLocalizations>(
-        () => const FormulariumDecimalMessages());
+final CurrentL10n<IFormulariumDecimalLocalizations> _current =
+    CurrentL10n(FormulariumDecimalMessages.new);
 
 /// As localizações correntes para mensagens de validação de campos decimais.
-IFormulariumDecimalLocalizations get fdL10n => _fdL10nHolder.value;
+IFormulariumDecimalLocalizations get fdL10n => _current.value;
 
 /// Injeta um override (hook de teste).
-set fdL10n(IFormulariumDecimalLocalizations value) => _fdL10nHolder.value = value;
+set fdL10n(IFormulariumDecimalLocalizations value) => _current.value = value;
 
 /// Remove o override injetado.
-void resetFdL10n() => _fdL10nHolder.reset();
+void resetFdL10n() => _current.reset();
 
-/// Inicializa as mensagens e a formatação de datas para [locale] (ou o locale
-/// global corrente), sincronizando `Intl.defaultLocale`.
+/// Inicializa intl (mensagens + símbolos de data) para uso sem Flutter.
 Future<void> initFormulariumDecimalL10n([String? locale]) async {
   final loc = Intl.canonicalizedLocale(locale ?? Intl.defaultLocale ?? 'en');
   Intl.defaultLocale = loc;
-  await msgs_init.initializeMessages(loc);
+  await initializeMessages(loc);
   await initializeDateFormatting(loc);
 }

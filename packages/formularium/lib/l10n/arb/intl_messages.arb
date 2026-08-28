@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2026-08-28T08:03:13.349220",
+  "@@last_modified": "2026-08-28T13:17:45.651970",
   "date_time_field_before": "Deve ser antes de {date}",
   "@date_time_field_before": {
     "description": "Data deve ser anterior à data de referência",
@@ -10,6 +10,7 @@
   },
   "date_time_field_after": "Deve ser depois de {date}",
   "@date_time_field_after": {
+    "description": "Data deve ser posterior à data de referência",
     "type": "text",
     "placeholders": {
       "date": {}
@@ -17,6 +18,7 @@
   },
   "date_time_field_before_inclusive": "Deve ser antes ou em {date}",
   "@date_time_field_before_inclusive": {
+    "description": "Data deve ser anterior ou igual à data de referência",
     "type": "text",
     "placeholders": {
       "date": {}
@@ -24,6 +26,7 @@
   },
   "date_time_field_after_inclusive": "Deve ser depois ou em {date}",
   "@date_time_field_after_inclusive": {
+    "description": "Data deve ser posterior ou igual à data de referência",
     "type": "text",
     "placeholders": {
       "date": {}
@@ -31,6 +34,7 @@
   },
   "number_field_value_too_big": "Valor maior que {number}",
   "@number_field_value_too_big": {
+    "description": "Valor numérico excedeu o máximo permitido (limite informado no placeholder number)",
     "type": "text",
     "placeholders": {
       "number": {}
@@ -38,6 +42,7 @@
   },
   "number_field_value_too_small": "Valor menor que {number}",
   "@number_field_value_too_small": {
+    "description": "Valor numérico ficou abaixo do mínimo permitido (piso informado no placeholder number)",
     "type": "text",
     "placeholders": {
       "number": {}
@@ -51,6 +56,7 @@
   },
   "number_field_not_divisible": "Não é divisível por {divisor}",
   "@number_field_not_divisible": {
+    "description": "Número não é divisível pelo divisor informado",
     "type": "text",
     "placeholders": {
       "divisor": {}
@@ -58,16 +64,19 @@
   },
   "number_field_not_positive": "Deve ser positivo",
   "@number_field_not_positive": {
+    "description": "Número deve ser maior que zero",
     "type": "text",
     "placeholders": {}
   },
   "number_field_not_negative": "Deve ser negativo",
   "@number_field_not_negative": {
+    "description": "Número deve ser menor que zero",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_a_boolean": "\"{value}\" não é um booleano válido",
   "@validation_not_a_boolean": {
+    "description": "Entrada não representa um booleano (value é a entrada)",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -75,6 +84,7 @@
   },
   "validation_invalid_port": "\"{value}\" não é uma porta válida",
   "@validation_invalid_port": {
+    "description": "Entrada não é uma porta TCP/UDP válida (0-65535)",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -82,6 +92,7 @@
   },
   "validation_invalid_url": "\"{value}\" não é uma URL válida",
   "@validation_invalid_url": {
+    "description": "Entrada não é uma URL válida",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -89,6 +100,7 @@
   },
   "validation_invalid_lat_long": "\"{value}\" não é latitude/longitude válida",
   "@validation_invalid_lat_long": {
+    "description": "Entrada não é um par latitude/longitude válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -96,7 +108,7 @@
   },
   "validation_invalid_email": "\"{value}\" não é um email válido",
   "@validation_invalid_email": {
-    "description": "Email inválido",
+    "description": "Entrada não é um endereço de email válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -104,6 +116,7 @@
   },
   "validation_invalid_uuid": "UUID inválido {version}",
   "@validation_invalid_uuid": {
+    "description": "Entrada não é um UUID válido (version é a versão esperada, vazia quando qualquer versão)",
     "type": "text",
     "placeholders": {
       "version": {}
@@ -111,6 +124,7 @@
   },
   "validation_invalid_semver": "\"{value}\" não é uma versão semântica válida",
   "@validation_invalid_semver": {
+    "description": "Entrada não é uma versão semântica (semver) válida",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -118,6 +132,7 @@
   },
   "validation_invalid_jwt": "\"{value}\" não é um JWT válido",
   "@validation_invalid_jwt": {
+    "description": "Entrada não é um token JWT válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -125,6 +140,7 @@
   },
   "validation_invalid_slug": "\"{value}\" não é um slug válido",
   "@validation_invalid_slug": {
+    "description": "Entrada não é um slug URL válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -132,6 +148,7 @@
   },
   "validation_not_base64": "\"{value}\" não é Base64 válido",
   "@validation_not_base64": {
+    "description": "Entrada não é uma string Base64 válida",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -139,6 +156,7 @@
   },
   "validation_invalid_mime_type": "\"{value}\" não é um MIME type válido",
   "@validation_invalid_mime_type": {
+    "description": "Entrada não é um tipo MIME válido (ex.: text/plain)",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -146,6 +164,7 @@
   },
   "validation_invalid_locale": "\"{value}\" não é uma localidade válida",
   "@validation_invalid_locale": {
+    "description": "Entrada não é um identificador de localidade (locale) válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -153,6 +172,7 @@
   },
   "validation_invalid_credit_card": "Cartão de crédito inválido {provider}",
   "@validation_invalid_credit_card": {
+    "description": "Entrada não é um número de cartão de crédito válido (provider é a bandeira esperada, vazia quando qualquer bandeira)",
     "type": "text",
     "placeholders": {
       "provider": {}
@@ -160,6 +180,7 @@
   },
   "validation_weak_password": "Senha fraca ({score}/{minScore})",
   "@validation_weak_password": {
+    "description": "Pontuação da senha ficou abaixo do mínimo (score obtido, minScore exigido)",
     "type": "text",
     "placeholders": {
       "score": {},
@@ -168,6 +189,7 @@
   },
   "validation_invalid_mongo_id": "\"{value}\" não é um MongoId válido",
   "@validation_invalid_mongo_id": {
+    "description": "Entrada não é um ObjectId do MongoDB válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -175,6 +197,7 @@
   },
   "validation_invalid_hash": "Hash {algorithm} inválido",
   "@validation_invalid_hash": {
+    "description": "Entrada não é um hash válido do algoritmo esperado (ex.: md5, sha256)",
     "type": "text",
     "placeholders": {
       "algorithm": {}
@@ -182,6 +205,7 @@
   },
   "validation_invalid_imei": "\"{value}\" não é um IMEI válido",
   "@validation_invalid_imei": {
+    "description": "Entrada não é um número IMEI válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -189,6 +213,7 @@
   },
   "validation_invalid_phone": "\"{value}\" não é um telefone válido",
   "@validation_invalid_phone": {
+    "description": "Entrada não é um número de telefone válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -196,6 +221,7 @@
   },
   "validation_invalid_json": "\"{value}\" não é JSON válido",
   "@validation_invalid_json": {
+    "description": "Entrada não é um documento JSON válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -203,6 +229,7 @@
   },
   "validation_invalid_mac_address": "\"{value}\" não é MAC address válido",
   "@validation_invalid_mac_address": {
+    "description": "Entrada não é um endereço MAC válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -210,11 +237,13 @@
   },
   "validation_not_octal": "Não é octal válido",
   "@validation_not_octal": {
+    "description": "Entrada não é um número octal válido",
     "type": "text",
     "placeholders": {}
   },
   "validation_byte_length_exceeded": "Comprimento em bytes deve ser entre {min} e {max}",
   "@validation_byte_length_exceeded": {
+    "description": "Comprimento em bytes da entrada fora dos limites (mínimo e máximo em bytes)",
     "type": "text",
     "placeholders": {
       "min": {},
@@ -223,31 +252,37 @@
   },
   "validation_not_multibyte": "Não é multibyte",
   "@validation_not_multibyte": {
+    "description": "Entrada não contém caracteres multibyte",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_full_width": "Não é full-width",
   "@validation_not_full_width": {
+    "description": "Entrada não contém apenas caracteres full-width (CJK)",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_half_width": "Não é half-width",
   "@validation_not_half_width": {
+    "description": "Entrada não contém apenas caracteres half-width (CJK)",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_variable_width": "Não é variable-width",
   "@validation_not_variable_width": {
+    "description": "Entrada não contém apenas caracteres de largura variável",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_surrogate_pair": "Não é surrogate pair",
   "@validation_not_surrogate_pair": {
+    "description": "Entrada não contém pares substitutos (surrogate pairs) UTF-16",
     "type": "text",
     "placeholders": {}
   },
   "validation_invalid_ip": "\"{value}\" não é um IP válido",
   "@validation_invalid_ip": {
+    "description": "Entrada não é um endereço IP válido (v4 ou v6)",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -255,6 +290,7 @@
   },
   "validation_invalid_postal_code": "\"{value}\" não é um CEP válido",
   "@validation_invalid_postal_code": {
+    "description": "Entrada não é um código postal válido",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -262,6 +298,7 @@
   },
   "validation_invalid_isbn": "\"{value}\" não é um ISBN válido",
   "@validation_invalid_isbn": {
+    "description": "Entrada não é um ISBN válido (v10 ou v13)",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -269,6 +306,7 @@
   },
   "validation_invalid_ean": "\"{value}\" não é um EAN válido",
   "@validation_invalid_ean": {
+    "description": "Entrada não é um código EAN válido (EAN-8 ou EAN-13)",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -276,6 +314,7 @@
   },
   "validation_invalid_base32": "\"{value}\" não é Base32 válido",
   "@validation_invalid_base32": {
+    "description": "Entrada não é uma string Base32 válida",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -283,6 +322,7 @@
   },
   "validation_invalid_base58": "\"{value}\" não é Base58 válido",
   "@validation_invalid_base58": {
+    "description": "Entrada não é uma string Base58 válida",
     "type": "text",
     "placeholders": {
       "value": {}
@@ -290,21 +330,25 @@
   },
   "validation_not_alphanumeric": "Não é alfanumérico",
   "@validation_not_alphanumeric": {
+    "description": "Entrada contém caracteres que não são letras ou números",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_alpha": "Não é alfabético",
   "@validation_not_alpha": {
+    "description": "Entrada contém caracteres que não são letras",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_ascii": "Não é ASCII",
   "@validation_not_ascii": {
+    "description": "Entrada contém caracteres fora do intervalo ASCII",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_numeric": "Não é numérico",
   "@validation_not_numeric": {
+    "description": "Entrada não é um número (noSymbols indica se símbolos como + - são permitidos)",
     "type": "text",
     "placeholders": {
       "noSymbols": {}
@@ -312,21 +356,25 @@
   },
   "validation_not_hexadecimal": "Não é hexadecimal",
   "@validation_not_hexadecimal": {
+    "description": "Entrada não é um número hexadecimal válido",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_lowercase": "Não está em minúsculas",
   "@validation_not_lowercase": {
+    "description": "Entrada contém caracteres que não estão em minúsculas",
     "type": "text",
     "placeholders": {}
   },
   "validation_not_uppercase": "Não está em maiúsculas",
   "@validation_not_uppercase": {
+    "description": "Entrada contém caracteres que não estão em maiúsculas",
     "type": "text",
     "placeholders": {}
   },
   "validation_string_length_exceeded": "Comprimento deve ser entre {min} e {max}",
   "@validation_string_length_exceeded": {
+    "description": "Comprimento da string fora dos limites (mínimo e máximo em caracteres)",
     "type": "text",
     "placeholders": {
       "min": {},
@@ -335,6 +383,7 @@
   },
   "validation_string_length_mismatch": "Comprimento deve ser um de: {discrete}",
   "@validation_string_length_mismatch": {
+    "description": "Comprimento da string não corresponde a nenhum dos comprimentos permitidos (lista)",
     "type": "text",
     "placeholders": {
       "discrete": {}
@@ -342,6 +391,7 @@
   },
   "validation_pattern_mismatch": "Não corresponde ao padrão: {pattern}",
   "@validation_pattern_mismatch": {
+    "description": "Entrada não corresponde à expressão regular esperada",
     "type": "text",
     "placeholders": {
       "pattern": {}
@@ -349,11 +399,13 @@
   },
   "validation_not_in_list": "Valor não está na lista permitida",
   "@validation_not_in_list": {
+    "description": "Entrada não corresponde a nenhum dos valores permitidos",
     "type": "text",
     "placeholders": {}
   },
   "validation_must_contain": "Deve conter \"{seed}\"",
   "@validation_must_contain": {
+    "description": "Entrada não contém a substring obrigatória",
     "type": "text",
     "placeholders": {
       "seed": {}
@@ -361,6 +413,7 @@
   },
   "validation_must_equal": "Deve ser igual a \"{comparison}\"",
   "@validation_must_equal": {
+    "description": "Entrada não é igual ao valor de comparação esperado",
     "type": "text",
     "placeholders": {
       "comparison": {}
@@ -368,6 +421,7 @@
   },
   "validation_invalid_time": "\"{value}\" não é um horário válido (formato {hourFormat}, modo {mode})",
   "@validation_invalid_time": {
+    "description": "Entrada não é um horário válido (hourFormat é 12h/24h, mode é o modo de validação)",
     "type": "text",
     "placeholders": {
       "value": {},
@@ -377,11 +431,13 @@
   },
   "date_invalid": "Data inválida",
   "@date_invalid": {
+    "description": "Entrada não é uma data válida",
     "type": "text",
     "placeholders": {}
   },
   "required_field_label": "Campo obrigatório",
   "@required_field_label": {
+    "description": "Rótulo exibido para campos obrigatórios",
     "type": "text",
     "placeholders": {}
   }

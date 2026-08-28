@@ -1,4 +1,7 @@
 /// Holder do acesso global às localizações de um pacote, com hook de teste.
+///
+/// Use apenas tipos NÃO anuláveis como [T]: um override `null` seria
+/// ignorado pelo getter (que cairia de volta em [resolve]).
 class CurrentL10n<T> {
   /// Cria um holder cujo valor default é produzido por [resolve].
   CurrentL10n(this.resolve);

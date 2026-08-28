@@ -1,4 +1,3 @@
-// formularium_localizations_delegate.dart
 import 'package:flutter/widgets.dart';
 import 'package:formularium/features/validators/_interfaces/formularium_localizations.dart';
 import 'package:intl/intl.dart';

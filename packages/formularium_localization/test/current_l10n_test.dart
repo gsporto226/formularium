@@ -17,7 +17,10 @@ void main() {
       holder.reset();
       expect(holder.value, 'resolved');
     });
-    test('ILocalizable localizes with no arguments', () {
+  });
+
+  group('ILocalizable', () {
+    test('localizes with no arguments', () {
       expect(const Fake().localize(), 'fake');
     });
   });

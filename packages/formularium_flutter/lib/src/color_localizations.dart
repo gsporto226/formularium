@@ -31,7 +31,7 @@ void resetFfL10n() => _current.reset();
 
 /// Inicializa intl (mensagens + símbolos de data) para uso sem Flutter.
 Future<void> initFormulariumFlutterL10n([String? locale]) async {
-  final loc = locale ?? Intl.defaultLocale ?? 'en';
+  final loc = Intl.canonicalizedLocale(locale ?? Intl.defaultLocale ?? 'en');
   Intl.defaultLocale = loc;
   await initializeMessages(loc);
   await initializeDateFormatting(loc);

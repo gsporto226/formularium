@@ -102,8 +102,7 @@
   "@validation_invalid_uuid": {
     "placeholders": {
       "version": {
-        "type": "String",
-        "nullable": true
+        "type": "String"
       }
     }
   },
@@ -159,8 +158,7 @@
   "@validation_invalid_credit_card": {
     "placeholders": {
       "provider": {
-        "type": "String",
-        "nullable": true
+        "type": "String"
       }
     }
   },
@@ -228,12 +226,10 @@
   "@validation_byte_length_exceeded": {
     "placeholders": {
       "min": {
-        "type": "int",
-        "nullable": true
+        "type": "int"
       },
       "max": {
-        "type": "int",
-        "nullable": true
+        "type": "int"
       }
     }
   },
@@ -308,12 +304,10 @@
   "@validation_string_length_exceeded": {
     "placeholders": {
       "min": {
-        "type": "int",
-        "nullable": true
+        "type": "int"
       },
       "max": {
-        "type": "int",
-        "nullable": true
+        "type": "int"
       }
     }
   },
