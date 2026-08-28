@@ -1,0 +1,19 @@
+{
+  "@@last_modified": "2026-08-28T08:10:57.565584",
+  "decimal_field_value_too_big": "Valor maior que {value}",
+  "@decimal_field_value_too_big": {
+    "description": "Valor decimal excedeu o máximo",
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "decimal_field_value_too_small": "Valor menor que {value}",
+  "@decimal_field_value_too_small": {
+    "description": "Valor decimal abaixo do mínimo",
+    "type": "text",
+    "placeholders": {
+      "value": {}
+    }
+  }
+}

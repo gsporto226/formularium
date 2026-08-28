@@ -1,12 +1,9 @@
-import 'package:concierge/context_interface.dart';
-import 'package:flutter/widgets.dart';
-import 'package:formularium_decimal/l10n/generated/app_localizations.dart';
+import 'package:formularium_localization/formularium_localization.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 
-/// Extension para recuperar as localizações decimais do [IContext].
-extension FormulariumDecimalL10n on IContext {
-  /// As localizações para mensagens de validação de campos decimais.
-  IFormulariumDecimalLocalizations get fdL10n => get<IFormulariumDecimalLocalizations>();
-}
+import '../l10n/intl_messages.dart' as msgs;
+import '../l10n/messages_all.dart' as msgs_init;
 
 /// Interface de localização para mensagens de validação de campos decimais.
 abstract interface class IFormulariumDecimalLocalizations {
@@ -22,45 +19,41 @@ abstract interface class IFormulariumDecimalLocalizations {
   String get localeName;
 }
 
-/// Ponte padrão que expõe o [AppLocalizations] gerado por gen-l10n sob o
-/// contrato [IFormulariumDecimalLocalizations].
-class FormulariumDecimalLocalizations implements IFormulariumDecimalLocalizations {
-  /// Cria uma ponte sobre a instância gerada [app].
-  const FormulariumDecimalLocalizations(this._app);
-
-  final AppLocalizations _app;
-
-  /// Delegate padrão para uso em `MaterialApp.localizationsDelegates`.
-  static const LocalizationsDelegate<FormulariumDecimalLocalizations> delegate =
-      _FormulariumDecimalLocalizationsDelegate();
-
-  /// Obtém as localizações do [context] embrulhadas na ponte.
-  static FormulariumDecimalLocalizations of(BuildContext context) =>
-      FormulariumDecimalLocalizations(AppLocalizations.of(context));
+/// Implementação nativa (intl) de [IFormulariumDecimalLocalizations].
+class FormulariumDecimalMessages implements IFormulariumDecimalLocalizations {
+  /// Cria as localizações decimais.
+  const FormulariumDecimalMessages();
 
   @override
-  String decimal_field_value_too_big(String value) => _app.decimal_field_value_too_big(value);
+  String decimal_field_value_too_big(String value) =>
+      msgs.decimal_field_value_too_big(value);
 
   @override
-  String decimal_field_value_too_small(String value) => _app.decimal_field_value_too_small(value);
+  String decimal_field_value_too_small(String value) =>
+      msgs.decimal_field_value_too_small(value);
 
   @override
-  String get localeName => _app.localeName;
+  String get localeName => Intl.getCurrentLocale();
 }
 
-/// Delegate que carrega um [FormulariumDecimalLocalizations] embrulhando o
-/// [AppLocalizations] gerado.
-class _FormulariumDecimalLocalizationsDelegate
-    extends LocalizationsDelegate<FormulariumDecimalLocalizations> {
-  const _FormulariumDecimalLocalizationsDelegate();
+final CurrentL10n<IFormulariumDecimalLocalizations> _fdL10nHolder =
+    CurrentL10n<IFormulariumDecimalLocalizations>(
+        () => const FormulariumDecimalMessages());
 
-  @override
-  Future<FormulariumDecimalLocalizations> load(Locale locale) async =>
-      FormulariumDecimalLocalizations(await AppLocalizations.delegate.load(locale));
+/// As localizações correntes para mensagens de validação de campos decimais.
+IFormulariumDecimalLocalizations get fdL10n => _fdL10nHolder.value;
 
-  @override
-  bool isSupported(Locale locale) => AppLocalizations.delegate.isSupported(locale);
+/// Injeta um override (hook de teste).
+set fdL10n(IFormulariumDecimalLocalizations value) => _fdL10nHolder.value = value;
 
-  @override
-  bool shouldReload(_FormulariumDecimalLocalizationsDelegate old) => false;
+/// Remove o override injetado.
+void resetFdL10n() => _fdL10nHolder.reset();
+
+/// Inicializa as mensagens e a formatação de datas para [locale] (ou o locale
+/// global corrente), sincronizando `Intl.defaultLocale`.
+Future<void> initFormulariumDecimalL10n([String? locale]) async {
+  final loc = Intl.canonicalizedLocale(locale ?? Intl.defaultLocale ?? 'en');
+  Intl.defaultLocale = loc;
+  await msgs_init.initializeMessages(loc);
+  await initializeDateFormatting(loc);
 }

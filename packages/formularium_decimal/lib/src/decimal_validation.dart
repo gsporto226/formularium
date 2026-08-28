@@ -1,8 +1,8 @@
-import 'package:concierge/context_interface.dart';
 import 'package:decimal/decimal.dart';
+import 'package:decimal/intl.dart';
 import 'package:formularium_decimal/src/decimal_localizations.dart';
+import 'package:formularium_localization/formularium_localization.dart';
 import 'package:intl/intl.dart';
-import 'package:localization_interface/localization_interface.dart';
 
 /// Hierarquia selada de estados de validação decimal, cada um localizável.
 sealed class DecimalValidation implements ILocalizable {
@@ -22,10 +22,12 @@ class DecimalTooBig implements DecimalValidation {
   final Decimal maxValue;
 
   @override
-  String localize(IContext context) {
-    final fdL10n = context.fdL10n;
-    final formatted = NumberFormat.currency(locale: fdL10n.localeName, symbol: r'R$').format(maxValue);
-    return fdL10n.decimal_field_value_too_big(formatted);
+  String localize() {
+    final fd = fdL10n;
+    final formatted = DecimalFormatter(
+      NumberFormat.currency(locale: fd.localeName, symbol: r'R$'),
+    ).format(maxValue);
+    return fd.decimal_field_value_too_big(formatted);
   }
 }
 
@@ -38,9 +40,11 @@ class DecimalTooSmall implements DecimalValidation {
   final Decimal minValue;
 
   @override
-  String localize(IContext context) {
-    final fdL10n = context.fdL10n;
-    final formatted = NumberFormat.currency(locale: fdL10n.localeName, symbol: r'R$').format(minValue);
-    return fdL10n.decimal_field_value_too_small(formatted);
+  String localize() {
+    final fd = fdL10n;
+    final formatted = DecimalFormatter(
+      NumberFormat.currency(locale: fd.localeName, symbol: r'R$'),
+    ).format(minValue);
+    return fd.decimal_field_value_too_small(formatted);
   }
 }
