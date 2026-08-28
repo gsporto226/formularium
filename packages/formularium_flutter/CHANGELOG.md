@@ -1,3 +1,12 @@
+## 0.1.0
+
+ - **BREAKING**(formularium_flutter): `ILocalizable` movido para `formularium_localization`; assinatura agora é `String localize()` (sem `IContext`/parâmetros).
+ - **BREAKING**(formularium_flutter): `concierge` e `localization_interface` removidos como dependências.
+ - **FEAT**(formularium_flutter): mensagens resolvidas via `Intl.defaultLocale` (intl nativo); ARBs gerados com `intl_translation` (gen-l10n removido).
+ - **FEAT**(formularium_flutter): novo acesso global `ffL10n` + `resetFfL10n()` + `initFormulariumFlutterL10n([locale])` para uso sem Flutter.
+ - **REFACTOR**(formularium_flutter): delegate renomeado para `FormulariumFlutterLocalizationsDelegate`.
+ - **DOCS**(formularium_flutter): migração para consumidores: (1) importar `package:formularium_localization/formularium_localization.dart`; (2) `localize(IContext)` → `localize()`; (3) resolver mensagens via o global `ffL10n` ou `Intl.message`; (4) call sites deixam de passar o contexto.
+
 ## 0.0.2
 
  - **REFACTOR**(formularium): adiciona docs em pt-BR, corrige lints e seções supérfluas. ([a15c26a6](https://github.com/ConceitoSolucoes/FlutterMonorepo/commit/a15c26a67cf9658e4361d425394962925fea444f))
