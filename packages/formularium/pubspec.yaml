@@ -1,0 +1,32 @@
+name: formularium
+description: Formulário independente de Flutter, extraído do flutter_common
+version: 0.0.2
+publish_to: none
+
+environment:
+  sdk: ">=3.12.0"
+
+resolution: workspace
+
+dependencies:
+  clock: ^1.1.2
+  concierge: ^0.0.2
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  formularium_localization: ^0.0.1
+  intl: ^0.20.2
+  listenable_plus: ^0.0.2
+  localization_interface: ^0.0.1+1
+  reef_utils: ^0.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  intl_translation: ^0.20.2
+  mocktail: ^1.0.5
+
+flutter:
+  generate: true

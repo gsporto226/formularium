@@ -1,0 +1,369 @@
+{
+  "date_time_field_before": "Deve ser antes de {date}",
+  "@date_time_field_before": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "date_time_field_after": "Deve ser depois de {date}",
+  "@date_time_field_after": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "date_time_field_before_inclusive": "Deve ser antes ou em {date}",
+  "@date_time_field_before_inclusive": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "date_time_field_after_inclusive": "Deve ser depois ou em {date}",
+  "@date_time_field_after_inclusive": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "number_field_value_too_big": "Valor maior que {number}",
+  "@number_field_value_too_big": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "number_field_value_too_small": "Valor menor que {number}",
+  "@number_field_value_too_small": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_not_a_number": "Não é um número válido",
+  "number_field_not_divisible": "Não é divisível por {divisor}",
+  "@number_field_not_divisible": {
+    "placeholders": {
+      "divisor": {
+        "type": "String"
+      }
+    }
+  },
+  "number_field_not_positive": "Deve ser positivo",
+  "number_field_not_negative": "Deve ser negativo",
+  "validation_not_a_boolean": "\"{value}\" não é um booleano válido",
+  "@validation_not_a_boolean": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_port": "\"{value}\" não é uma porta válida",
+  "@validation_invalid_port": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_url": "\"{value}\" não é uma URL válida",
+  "@validation_invalid_url": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_lat_long": "\"{value}\" não é latitude/longitude válida",
+  "@validation_invalid_lat_long": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_email": "\"{value}\" não é um email válido",
+  "@validation_invalid_email": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_uuid": "UUID inválido {version}",
+  "@validation_invalid_uuid": {
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "nullable": true
+      }
+    }
+  },
+  "validation_invalid_semver": "\"{value}\" não é uma versão semântica válida",
+  "@validation_invalid_semver": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_jwt": "\"{value}\" não é um JWT válido",
+  "@validation_invalid_jwt": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_slug": "\"{value}\" não é um slug válido",
+  "@validation_invalid_slug": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_not_base64": "\"{value}\" não é Base64 válido",
+  "@validation_not_base64": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_mime_type": "\"{value}\" não é um MIME type válido",
+  "@validation_invalid_mime_type": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_locale": "\"{value}\" não é uma localidade válida",
+  "@validation_invalid_locale": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_credit_card": "Cartão de crédito inválido {provider}",
+  "@validation_invalid_credit_card": {
+    "placeholders": {
+      "provider": {
+        "type": "String",
+        "nullable": true
+      }
+    }
+  },
+  "validation_weak_password": "Senha fraca ({score}/{minScore})",
+  "@validation_weak_password": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      },
+      "minScore": {
+        "type": "int"
+      }
+    }
+  },
+  "validation_invalid_mongo_id": "\"{value}\" não é um MongoId válido",
+  "@validation_invalid_mongo_id": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_hash": "Hash {algorithm} inválido",
+  "@validation_invalid_hash": {
+    "placeholders": {
+      "algorithm": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_imei": "\"{value}\" não é um IMEI válido",
+  "@validation_invalid_imei": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_phone": "\"{value}\" não é um telefone válido",
+  "@validation_invalid_phone": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_json": "\"{value}\" não é JSON válido",
+  "@validation_invalid_json": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_mac_address": "\"{value}\" não é MAC address válido",
+  "@validation_invalid_mac_address": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_not_octal": "Não é octal válido",
+  "validation_byte_length_exceeded": "Comprimento em bytes deve ser entre {min} e {max}",
+  "@validation_byte_length_exceeded": {
+    "placeholders": {
+      "min": {
+        "type": "int",
+        "nullable": true
+      },
+      "max": {
+        "type": "int",
+        "nullable": true
+      }
+    }
+  },
+  "validation_not_multibyte": "Não é multibyte",
+  "validation_not_full_width": "Não é full-width",
+  "validation_not_half_width": "Não é half-width",
+  "validation_not_variable_width": "Não é variable-width",
+  "validation_not_surrogate_pair": "Não é surrogate pair",
+  "validation_invalid_ip": "\"{value}\" não é um IP válido",
+  "@validation_invalid_ip": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_postal_code": "\"{value}\" não é um CEP válido",
+  "@validation_invalid_postal_code": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_isbn": "\"{value}\" não é um ISBN válido",
+  "@validation_invalid_isbn": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_ean": "\"{value}\" não é um EAN válido",
+  "@validation_invalid_ean": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_base32": "\"{value}\" não é Base32 válido",
+  "@validation_invalid_base32": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_base58": "\"{value}\" não é Base58 válido",
+  "@validation_invalid_base58": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_not_alphanumeric": "Não é alfanumérico",
+  "validation_not_alpha": "Não é alfabético",
+  "validation_not_ascii": "Não é ASCII",
+  "validation_not_numeric": "Não é numérico",
+  "@validation_not_numeric": {
+    "placeholders": {
+      "noSymbols": {
+        "type": "bool"
+      }
+    }
+  },
+  "validation_not_hexadecimal": "Não é hexadecimal",
+  "validation_not_lowercase": "Não está em minúsculas",
+  "validation_not_uppercase": "Não está em maiúsculas",
+  "validation_string_length_exceeded": "Comprimento deve ser entre {min} e {max}",
+  "@validation_string_length_exceeded": {
+    "placeholders": {
+      "min": {
+        "type": "int",
+        "nullable": true
+      },
+      "max": {
+        "type": "int",
+        "nullable": true
+      }
+    }
+  },
+  "validation_string_length_mismatch": "Comprimento deve ser um de: {discrete}",
+  "@validation_string_length_mismatch": {
+    "placeholders": {
+      "discrete": {
+        "type": "List<int>"
+      }
+    }
+  },
+  "validation_pattern_mismatch": "Não corresponde ao padrão: {pattern}",
+  "@validation_pattern_mismatch": {
+    "placeholders": {
+      "pattern": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_not_in_list": "Valor não está na lista permitida",
+  "validation_must_contain": "Deve conter \"{seed}\"",
+  "@validation_must_contain": {
+    "placeholders": {
+      "seed": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_must_equal": "Deve ser igual a \"{comparison}\"",
+  "@validation_must_equal": {
+    "placeholders": {
+      "comparison": {
+        "type": "String"
+      }
+    }
+  },
+  "validation_invalid_time": "\"{value}\" não é um horário válido (formato {hourFormat}, modo {mode})",
+  "@validation_invalid_time": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "hourFormat": {
+        "type": "String"
+      },
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "date_invalid": "Data inválida",
+  "required_field_label": "Campo obrigatório"
+}

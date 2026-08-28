@@ -1,0 +1,21 @@
+name: formularium_workspace
+description: Monorepo do ecossistema formularium (workspace pub nativo)
+publish_to: none
+
+environment:
+  sdk: ">=3.12.0"
+
+workspace:
+  - packages/formularium
+  - packages/formularium_decimal
+  - packages/formularium_flutter
+  - packages/formularium_localization
+  - packages/concierge
+  - packages/localization_interface
+  - packages/formularium/example
+
+dependency_overrides:
+  listenable_plus:
+    path: ../my_packages/listenable_plus
+  reef_utils:
+    path: ../my_packages/reef_utils

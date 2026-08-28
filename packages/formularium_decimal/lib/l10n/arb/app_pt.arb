@@ -1,0 +1,18 @@
+{
+  "decimal_field_value_too_big": "Valor maior que {value}",
+  "@decimal_field_value_too_big": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "decimal_field_value_too_small": "Valor menor que {value}",
+  "@decimal_field_value_too_small": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  }
+}

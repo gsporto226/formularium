@@ -1,0 +1,10 @@
+{
+  "validation_invalid_color": "\"{value}\" não é uma cor válida",
+  "@validation_invalid_color": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  }
+}
