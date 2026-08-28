@@ -1,6 +1,6 @@
 name: formularium_flutter
 description: Flutter-dependent validators for formularium
-version: 0.0.2
+version: 0.1.0
 publish_to: none
 
 environment:
@@ -11,7 +11,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  formularium: ^0.0.2
+  formularium: ^0.1.0
   formularium_localization: ^0.0.1
 
 dev_dependencies:

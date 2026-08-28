@@ -1,6 +1,6 @@
 name: formularium_decimal
 description: Decimal-dependent validators for formularium
-version: 0.0.2
+version: 0.1.0
 publish_to: none
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
   decimal: ^3.0.2
   flutter:
     sdk: flutter
-  formularium: ^0.0.2
+  formularium: ^0.1.0
   formularium_localization: ^0.0.1
   intl: ^0.20.2
 

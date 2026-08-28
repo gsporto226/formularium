@@ -1,6 +1,6 @@
 name: formularium
 description: Formulário independente de Flutter, extraído do flutter_common
-version: 0.0.2
+version: 0.1.0
 publish_to: none
 
 environment:
