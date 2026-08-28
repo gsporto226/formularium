@@ -5,6 +5,10 @@ void main() {
   testWidgets('App renders menu with 7 examples', (tester) async {
     await tester.pumpWidget(const FormulariumExampleApp());
 
+    // Aguarda o carregamento assíncrono das localizações.
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pumpAndSettle();
+
     // Verifica o título
     expect(find.text('Formularium — Exemplos'), findsOneWidget);
 
@@ -20,6 +24,10 @@ void main() {
 
   testWidgets('Can navigate to BasicFormExample', (tester) async {
     await tester.pumpWidget(const FormulariumExampleApp());
+
+    // Aguarda o carregamento assíncrono das localizações.
+    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pumpAndSettle();
 
     // Toca no primeiro exemplo
     await tester.tap(find.text('01 — Formulário Básico'));
